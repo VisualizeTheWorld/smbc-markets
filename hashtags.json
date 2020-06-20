@@ -1,0 +1,11 @@
+{
+    "generic" : ["investing", "trading", "money", "investment", "finance", "investor", "trader", "invest", "daytrader", "entrepreneur", "financialfreedom", "daytrading", "wealth", "technicalanalysis", "investors", "millionaire", "trade", "market", "passiveincome", "cash", "entrepreneurship", "business", "alpha", "seekingalpha"],
+    "stock" : ["stockmarket", "stocks", "stocktrader", "wallstreet", "stockmarketnews", "stockexchange", "stockmarkets", "stockmarketinvesting", "stock"],
+    "cryptocurrency" : ["cryptocurrency", "crypto", "blockchain", "binance", "hodl", "blockchaintechnology", "cryptotrading", "cryptoinvestor", "cryptonews", "forex", "fintech"],
+    "bitcoin" : ["bitcoin", "bitcoins", "bitcoinexchange", "btc"],
+    "ethereum" : ["ethereum", "eth"],
+    "tesla" : ["tesla", "elonmusk", "elon", "ev", "science", "future"],
+    "tech" : ["startup", "innovation", "faang"]
+}
+
+
