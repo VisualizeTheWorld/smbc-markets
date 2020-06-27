@@ -53,9 +53,11 @@ def parse_headlines(headlines,max_age=60*60*24):
 bad_phrases = ['here\'s what you need to know',
                'what to know about',
                ':',
+               '@',
                ]
 bad_prefixes = ['what',
                 'when',
+                'how',
                 ]
 def is_bad_headline(headline):
     lc_headline = headline.lower()

@@ -1,13 +1,13 @@
 # The main program
 import json
 import random
+import twitter
 import alphavantage, nytimes
 
 def get_api_keys():
     keys = {}
-    with open('api-keys.txt','r') as f:
-        keys = [line.split(' ') for line in f.read().split('\n')]
-    keys = { l[0] : l[1] for l in keys if len(l) == 2 }
+    with open('api-keys.json','r') as f:
+        keys = json.load(f)
     return keys
 
 def get_hashtags():
@@ -57,8 +57,20 @@ def construct_tweet(api_keys, hashtag_list, n_retries=3, max_tweet_len=280):
     # Construct final tweet
     return '%s%s' % (tweet,''.join(hashtags))
 
+def send_tweet(tweet,twitter_keys):
+    oauth = twitter.OAuth(twitter_keys['auth'],twitter_keys['auth-secret'],
+            twitter_keys['consumer'],twitter_keys['consumer-secret'])
+    T = twitter.Twitter(auth=oauth)
+
+    T.statuses.update(status=tweet)
+
 if __name__ == '__main__':
+    # Get 
     api_keys = get_api_keys()
     hashtag_list = get_hashtags()
+
+    # Build tweet
     tweet = construct_tweet(api_keys,hashtag_list,n_retries=3)
-    print(tweet)
+
+    # Send tweet
+    send_tweet(tweet,api_keys['twitter'])
